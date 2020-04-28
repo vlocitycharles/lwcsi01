@@ -24,7 +24,7 @@ If you are familiar with Selectable Items, you will find this similar.  One impo
 
 Here's a sample configuration we'll walk through:
 
-![](/Users/charles/VlocityRepos/lwcsi01/readme01.png)
+![](readme01.png)
 
 The configuration is driven by the following custom properties:
 
@@ -37,17 +37,17 @@ The configuration is driven by the following custom properties:
 
 While the source of the data can definitely be a DataRaptor or Integration Procedure, you can also use a Set Values to set dummy data.  For example:
 
-![](/Users/charles/VlocityRepos/lwcsi01/readme02.png)
+![](readme02.png)
 
 Because the structure of the data (an array of key:value pairs), you have to Edit as JSON to see the actual data:
 
-![](/Users/charles/VlocityRepos/lwcsi01/readme03.png)
+![](readme03.png)
 
 In this case, I've created a variable called "listdata" which has two rows.
 
 All this, together, produces the output that looks like (with select=true):
 
-![](/Users/charles/VlocityRepos/lwcsi01/readme04.png)
+![](readme04.png)
 
 You can see here the input, listdata, and the output, Step1.ExampleSI, in the Data JSON.
 
