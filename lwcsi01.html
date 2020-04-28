@@ -1,0 +1,38 @@
+<!--
+  "Selectable Items" LWC Component for Vlocity OmniScript
+  @author Kirk Leibert
+  @author Charles McGuinness
+-->
+<template>
+  <div class="panel panel-default">
+    <div>{Title}</div>
+    <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+      <thead>
+        <tr>
+          <template if:true={parms_showSelect}>
+            <th class="slds-cell-shrink">Select</th>
+          </template>
+          <template for:each={headers} for:item="header">
+            <th key={header.key}>{header.value}</th>
+          </template>
+        </tr>
+      </thead>
+      <tbody class="ins">
+        <template for:each={displayRows} for:item="displayrow">
+          <tr key={displayrow.index}>
+            <template if:true={parms_showSelect}>
+              <td class="slds-cell-shrink">
+                <lightning-input type="checkbox" variant="label-hidden" checked={displayrow.checked}
+                  name={displayrow.tagname} data-key={displayrow.index} label="dataCheckbox" onchange={handleSelection}>
+                </lightning-input>
+              </td>
+            </template>
+            <template for:each={displayrow.columns} for:item="column">
+              <td key={column.key}>{column.value}</td>
+            </template>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </div>
+</template>
