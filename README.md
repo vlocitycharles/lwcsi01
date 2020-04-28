@@ -54,3 +54,9 @@ You can see here the input, listdata, and the output, Step1.ExampleSI, in the Da
 ## Notes and Caveats
 
 In order to test the LWC, even in preview, you have to activate your OmniScript.  This takes ~2 minutes (+/- quite a bit).  If the OmniScript is not activated, and you preview, this LWC will not render.  That's not harmful, except that it will be missing.  But be aware that testing with the LWC is going to be slow going.
+
+### Credits
+
+Kirk Leibert <kleibert@vlocity.com>
+
+Charles McGuinness <cmcguinness@vlocity.com>
