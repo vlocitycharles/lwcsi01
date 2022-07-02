@@ -51,10 +51,10 @@ All this, together, produces the output that looks like (with select=true):
 
 You can see here the input, listdata, and the output, Step1.ExampleSI, in the Data JSON.
 
-![])(readme05.png)
+![](readme05.png)
 Input to filter the list in all fields
 
-![])(readme06.png)
+![](readme06.png)
 Value selected persisted even after filter aplied
 
 ## Notes and Caveats
