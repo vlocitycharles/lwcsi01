@@ -51,6 +51,12 @@ All this, together, produces the output that looks like (with select=true):
 
 You can see here the input, listdata, and the output, Step1.ExampleSI, in the Data JSON.
 
+![](readme05.PNG)
+Input to filter the list in all fields
+
+![](readme06.PNG)
+Value selected persisted even after filter aplied
+
 ## Notes and Caveats
 
 In order to test the LWC, even in preview, you have to activate your OmniScript.  This takes ~2 minutes (+/- quite a bit).  If the OmniScript is not activated, and you preview, this LWC will not render.  That's not harmful, except that it will be missing.  But be aware that testing with the LWC is going to be slow going.
@@ -62,3 +68,5 @@ There's not much error checking in this so far, and so if you make a configurati
 Kirk Leibert <kleibert@vlocity.com>
 
 Charles McGuinness <cmcguinness@vlocity.com>
+
+Victor Yuzo

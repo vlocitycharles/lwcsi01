@@ -2,37 +2,56 @@
   "Selectable Items" LWC Component for Vlocity OmniScript
   @author Kirk Leibert
   @author Charles McGuinness
+	
+	Edited by Victor Yuzo
 -->
 <template>
   <div class="panel panel-default">
     <div>{Title}</div>
-    <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
-      <thead>
-        <tr>
+	<!--	<input type="text" class="myInput" name="search" onkeyup='{tableSearch}' placeholder="Digite...">-->
+		        <lightning-input
+							  type=”search” onchange={handleKeyChange} style="margin-bottom:1.5rem" maxlength=”50″ placeholder="Pesquise...">  
+            </lightning-input> 
+		
+		<div class="slds-table--header-fixed_container" style="height:450px;">
+    <div class="slds-scrollable" style="height:100%;">
+    <table aria-multiselectable="true" class="slds-table slds-table_bordered slds-table slds-table--header-fixed  myTable" 
+					 role="grid">
+      <thead >
+        <tr class="slds-line-height_reset slds-text-title_caps ">
           <template if:true={parms_showSelect}>
-            <th class="slds-cell-shrink">Select</th>
+            <th class="slds-cell-shrink"></th>
           </template>
           <template for:each={headers} for:item="header">
-            <th key={header.key}>{header.value}</th>
+            <th class="slds-cell_action-mode"  scope="col" key={header.key}>								
+										<div class="slds-truncate slds-cell-fixed slds-text-align_center " title={header.value}>{header.value}</div>			
+							</th>
           </template>
         </tr>
       </thead>
       <tbody class="ins">
         <template for:each={displayRows} for:item="displayrow">
+					<template if:true={displayrow.boolFilter}>
           <tr key={displayrow.index}>
             <template if:true={parms_showSelect}>
-              <td class="slds-cell-shrink">
+              <td class="slds-cell-shrink slds-cell_action-mode" role="gridcell" >
                 <lightning-input type="checkbox" variant="label-hidden" checked={displayrow.checked}
                   name={displayrow.tagname} data-key={displayrow.index} label="dataCheckbox" onchange={handleSelection}>
                 </lightning-input>
               </td>
             </template>
             <template for:each={displayrow.columns} for:item="column">
-              <td key={column.key}>{column.value}</td>
+              <td role="gridcell" class="slds-cell-wrap" key={column.key}>
+									<div class="slds-line-clamp">
+									{column.value}
+									</div></td>
             </template>
           </tr>
         </template>
+					</template>
       </tbody>
     </table>
+				</div>
+			</div>
   </div>
 </template>
